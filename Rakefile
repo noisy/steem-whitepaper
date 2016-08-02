@@ -10,20 +10,20 @@ namespace :book do
   desc 'build basic book formats'
   task :build => :prebuild do
     puts "Converting to HTML..."
-    `bundle exec asciidoctor progit.asc`
-    puts " -- HTML output at progit.html"
+    `bundle exec asciidoctor SteemWhitePaper.asc`
+    puts " -- HTML output at SteemWhitePaper.html"
 
     puts "Converting to EPub..."
-    `bundle exec asciidoctor-epub3 progit.asc`
-    puts " -- Epub output at progit.epub"
+    `bundle exec asciidoctor-epub3 SteemWhitePaper.asc`
+    puts " -- Epub output at SteemWhitePaper.epub"
 
     puts "Converting to Mobi (kf8)..."
-    `bundle exec asciidoctor-epub3 -a ebook-format=kf8 progit.asc`
-    puts " -- Mobi output at progit.mobi"
+    `bundle exec asciidoctor-epub3 -a ebook-format=kf8 SteemWhitePaper.asc`
+    puts " -- Mobi output at SteemWhitePaper.mobi"
 
     puts "Converting to PDF... (this one takes a while)"
-    `bundle exec asciidoctor-pdf progit.asc 2>/dev/null`
-    puts " -- PDF  output at progit.pdf"
+    `bundle exec asciidoctor-pdf SteemWhitePaper.asc 2>/dev/null`
+    puts " -- PDF  output at SteemWhitePaper.pdf"
   end
 end
 
